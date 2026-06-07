@@ -47,13 +47,13 @@ $result = $conn->query("SELECT * FROM applicants");
                     <td><?= $row['name']; ?></td>
                     <td><?= $row['location']; ?></td>
                     <td><?= $row['position']; ?></td>
-                    <td>
-                        <a href="update.php?id=<?= $row['id']; ?>" class="btn btn-edit">Edit</a>
+                        <td>
+                            <a href="read.php?id=<?= $row['id']; ?>" class="btn btn-add">View</a>
 
-                        <a href="#" onclick="deleteWithUndo(<?= $row['id']; ?>)" class="btn btn-delete">
-                            Delete
-                        </a>
-                    </td>
+                            <a href="update.php?id=<?= $row['id']; ?>" class="btn btn-edit">Edit</a>
+
+                            <a href="#" onclick="del(<?= $row['id']; ?>)" class="btn btn-delete">Delete</a>
+                        </td>
                 </tr>
             <?php endwhile; ?>
         <?php else: ?>
