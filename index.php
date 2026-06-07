@@ -52,7 +52,7 @@ $result = $conn->query("SELECT * FROM applicants");
 
                             <a href="update.php?id=<?= $row['id']; ?>" class="btn btn-edit">Edit</a>
 
-                            <a href="#" onclick="del(<?= $row['id']; ?>)" class="btn btn-delete">Delete</a>
+                            <a href="#" onclick="deleteWithUndo(<?= $row['id']; ?>)" class="btn btn-delete">Delete</a>
                         </td>
                 </tr>
             <?php endwhile; ?>
