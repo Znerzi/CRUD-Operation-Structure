@@ -10,6 +10,4 @@ CREATE TABLE applicants (
 );
 
 INSERT INTO applicants (name, location, position) VALUES
-('John Doe', 'New York', 'Software Developer'),
-('Jane Smith', 'Los Angeles', 'UI Designer'),
-('Mike Johnson', 'Chicago', 'Project Manager');
+("John Doe", "Tondo, Manila", "Back-End Developer");
