@@ -1,7 +1,7 @@
 <?php
 include 'db.php';
 
-if (isset($_GET['id'])){
+if (isset($_GET['id'])) {
     $id = (int) $_GET['id'];
 
     $stmt = $conn -> prepare("DELETE FROM applicants WHERE id = ?");
@@ -14,7 +14,7 @@ if (isset($_GET['id'])){
         die("Error deleting record: " . $stmt -> error);
     }
 } else {
-    header("Location: index.php");
+    die("Location: index.php");
     exit();
 }
 ?>
