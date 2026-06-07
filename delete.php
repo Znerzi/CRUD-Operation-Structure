@@ -1,17 +1,22 @@
 <?php
 include 'db.php';
 
-if (isset($_GET['id'])) {
+if (isset($_GET['id'])){
+    $id = (int) $_GET['id'];
 
-    $id = $_GET['id'];
+    $stmt = (int)$_GET['id'];
 
-    $sql = "DELETE FROM applicants WHERE id = $id";
+    $stmt = $conn -> prepare("DELETE FROM applicants WHERE id = ?");
+    $stmt -> bind_param("i", $id);
 
-    if ($conn->query($sql)) {
+    if ($stmt -> execute()) {
         header("Location: index.php?msg=deleted");
         exit();
     } else {
-        echo "Error: " . $conn->error;
+        die("Error deleting record: " . $stmt -> error);
     }
+} else {
+    header("Location: index.php");
+    exit();
 }
 ?>
