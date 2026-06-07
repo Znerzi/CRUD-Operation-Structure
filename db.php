@@ -1,10 +1,8 @@
 <?php
-// Database connection
+    $conn = new mysqli("localhost","root","","applicants_db");
 
-$conn = new mysqli("localhost", "root", "", "applicants_db");
 
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+    if ($conn->connect_error){
+        die("Connection failed: " . $conn->connect_error);
+    }
 ?>
