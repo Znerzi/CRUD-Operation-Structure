@@ -1,7 +1,6 @@
 <?php
 include 'db.php';
 
-// check if id exists
 if (isset($_GET['id'])) {
 
     $id = $_GET['id'];
@@ -15,5 +14,4 @@ if (isset($_GET['id'])) {
         echo "Error: " . $conn->error;
     }
 }
-
 ?>
