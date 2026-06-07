@@ -1,9 +1,9 @@
-<?php 
+<?php
 include 'db.php';
 
 $message = "";
 
-if (isset ($_POST['submit'])){
+if (isset($_POST['submit'])){
     $name = $_POST['name'];
     $location = $_POST['location'];
     $position = $_POST['position'];
@@ -12,7 +12,7 @@ if (isset ($_POST['submit'])){
         header("Location: index.php?msg=success");
         exit();
     } else {
-        $message = "<p class='error'> Error: " . $conn->error . "</p>";
+        $message = "<p class='error'> Error: " . $conn -> error . "</p>";
     }
 }
 ?>
@@ -25,7 +25,6 @@ if (isset ($_POST['submit'])){
     <link rel="stylesheet" href="style.css">
     <title>Add Applicant</title>
 </head>
-
 <body>
     <div class="container">
         <h1>Add Applicant</h1>
@@ -34,13 +33,13 @@ if (isset ($_POST['submit'])){
 
         <form method="POST" class="form">
             <label for="Name"></label>
-            <input type="text" id="name" name="name" placeholder="Enter applicant name..." required value="<?=isset($name) ? $name : '' ?>">
-
+            <input type="text" id="name" name="name" placeholder="Enter a name..." required value="<?=isset($name) ? $name : '' ?>">
+            
             <label for="Location"></label>
-            <input type="text" id="location" name="location" placeholder="Enter applicant location..." required value="<?=isset($location) ? $location : '' ?>">
+            <input type="text" id="location" name="location" placeholder="Enter a location..." required value="<?=isset($location) ? $location : '' ?>">
 
             <label for="Position"></label>
-            <input type="text" id="position" name="position" placeholder="Enter applicant position..." required value="<?=isset($position) ? $position : '' ?>">
+            <input type="text" id="position" name="position" placeholder="Enter a position..." required value="<?=isset($position) ? $position : '' ?>">
 
             <button type="submit" name="submit" class="btn btn-submit">Add Applicant</button>
             <a href="index.php" class="btn btn-cancel">Cancel</a>
