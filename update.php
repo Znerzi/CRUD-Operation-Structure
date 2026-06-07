@@ -1,33 +1,22 @@
 <?php
-// UPDATE - Edit applicant
 include 'db.php';
 
-$message = ""; // For success/error messages
-$id = $_GET['id']; // Get applicant ID from URL
+$message = "";
+$id = $_GET['id'];
 
-// SQL query to get applicant data
-$sql = "SELECT * FROM applicants WHERE id = $id";
-$result = $conn->query($sql);
-$row = $result->fetch_assoc();
+$row = $conn->query("SELECT * FROM applicants WHERE id=$id")->fetch_assoc();
 
-// Check if form was submitted to update
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    
-    // Get updated data from form
+if (isset($_POST['submit'])) {
+
     $name = $_POST['name'];
     $location = $_POST['location'];
     $position = $_POST['position'];
-    
-    // SQL query to update applicant
-    $sql = "UPDATE applicants SET name = '$name', location = '$location', position = '$position' WHERE id = $id";
-    
-    // Execute query
-    if ($conn->query($sql) === TRUE) {
-        // Redirect to prevent duplicate submission on page refresh
+
+    if ($conn->query("UPDATE applicants SET name='$name', location='$location', position='$position' WHERE id=$id")) {
         header("Location: index.php?msg=updated");
         exit();
     } else {
-        $message = "<p class='error'>✗ Error: " . $conn->error . "</p>";
+        $message = "<p class='error'>Error: " . $conn->error . "</p>";
     }
 }
 ?>
@@ -43,22 +32,20 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <div class="container">
     <h1>Edit Applicant</h1>
     
-    <!-- Display message if any -->
-    <?php echo $message; ?>
+    <?= $message; ?>
     
-    <!-- Form to edit applicant -->
     <form method="POST" class="form">
         
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required value="<?php echo $row['name']; ?>">
+        <label>Name:</label>
+        <input type="text" name="name" required value="<?= $row['name']; ?>">
         
-        <label for="location">Location:</label>
-        <input type="text" id="location" name="location" required value="<?php echo $row['location']; ?>">
+        <label>Location:</label>
+        <input type="text" name="location" required value="<?= $row['location']; ?>">
         
-        <label for="position">Position:</label>
-        <input type="text" id="position" name="position" required value="<?php echo $row['position']; ?>">
+        <label>Position:</label>
+        <input type="text" name="position" required value="<?= $row['position']; ?>">
         
-        <button type="submit" class="btn btn-submit">Update Applicant</button>
+        <button type="submit" name="submit" class="btn btn-submit">Update Applicant</button>
         <a href="index.php" class="btn btn-cancel">Cancel</a>
     </form>
 </div>
