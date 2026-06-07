@@ -3,12 +3,12 @@ include 'db.php';
 
 $message = "";
 
-if (isset($_POST['submit'])){
+if (isset($_POST['submit'])) {
     $name = $_POST['name'];
     $location = $_POST['location'];
     $position = $_POST['position'];
 
-    if ($conn -> query("INSERT INTO applicants (name, location, position) VALUES ('$name', '$location', '$position')")){
+    if ($conn -> query("INSERT INTO applicants (name, location, position) VALUES ('$name', '$location', '$position')")) {
         header("Location: index.php?msg=success");
         exit();
     } else {
@@ -16,6 +16,7 @@ if (isset($_POST['submit'])){
     }
 }
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -32,20 +33,21 @@ if (isset($_POST['submit'])){
         <?php echo $message; ?>
 
         <form method="POST" class="form">
-            <label for="Name"></label>
-            <input type="text" id="name" name="name" placeholder="Enter a name..." required value="<?=isset($name) ? $name : '' ?>">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Enter applicant name" required value="<?=isset($name) ? $name : '' ?>">
             
-            <label for="Location"></label>
-            <input type="text" id="location" name="location" placeholder="Enter a location..." required value="<?=isset($location) ? $location : '' ?>">
+            <label for="location">Location</label>
+            <input type="text" id="location" name="location" placeholder="Enter applicant location" required value="<?=isset($location) ? $location : '' ?>">
+            
+            <label for="position">Position</label>
+            <input type="text" id="position" name="position" placeholder="Enter applicant position" required value="<?=isset($position) ? $position : '' ?>">
 
-            <label for="Position"></label>
-            <input type="text" id="position" name="position" placeholder="Enter a position..." required value="<?=isset($position) ? $position : '' ?>">
-
-            <button type="submit" name="submit" class="btn btn-submit">Add Applicant</button>
+            <button class="btn btn-submit" name="submit" type="submit">Add Applicant</button>
             <a href="index.php" class="btn btn-cancel">Cancel</a>
+            
         </form>
     </div>
 </body>
 </html>
 
-<?php $conn->close(); ?>
+<?php $conn -> close(); ?>
