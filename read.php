@@ -22,17 +22,14 @@ $row = $conn -> query("SELECT * FROM applicants WHERE id = $id") -> fetch_assoc(
                 <th>ID</th>
                 <td><?=$row['id'] ?></td>
             </tr>
-
             <tr>
                 <th>Name</th>
                 <td><?=$row['name'] ?></td>
             </tr>
-
             <tr>
                 <th>Location</th>
                 <td><?=$row['location'] ?></td>
             </tr>
-
             <tr>
                 <th>Position</th>
                 <td><?=$row['position'] ?></td>
@@ -44,4 +41,4 @@ $row = $conn -> query("SELECT * FROM applicants WHERE id = $id") -> fetch_assoc(
 </body>
 </html>
 
-<?php $conn -> close() ?>
+<?php $conn -> close(); ?>
