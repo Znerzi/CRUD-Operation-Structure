@@ -2,43 +2,46 @@
 include 'db.php';
 
 $id = $_GET['id'];
-$row = $conn->query("SELECT * FROM applicants WHERE id=$id")->fetch_assoc();
+$row = $conn -> query("SELECT * FROM applicants WHERE id = $id") -> fetch_assoc();
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>View</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <title>View</title>
 </head>
 <body>
+    <div class="container">
+        <h1>Applicant Details</h1>
 
-<div class="container">
-    <h2>Applicant Details</h2>
+        <table class="table">
+            <tr>
+                <th>ID</th>
+                <td><?=$row['id'] ?></td>
+            </tr>
 
-    <table class="table">
-        <tr>
-            <th>ID</th>
-            <td><?= $row['id']; ?></td>
-        </tr>
-        <tr>
-            <th>Name</th>
-            <td><?= $row['name']; ?></td>
-        </tr>
-        <tr>
-            <th>Location</th>
-            <td><?= $row['location']; ?></td>
-        </tr>
-        <tr>
-            <th>Position</th>
-            <td><?= $row['position']; ?></td>
-        </tr>
-    </table>
+            <tr>
+                <th>Name</th>
+                <td><?=$row['name'] ?></td>
+            </tr>
 
-    <a href="index.php" class="btn btn-cancel">Back</a>
-</div>
+            <tr>
+                <th>Location</th>
+                <td><?=$row['location'] ?></td>
+            </tr>
 
+            <tr>
+                <th>Position</th>
+                <td><?=$row['position'] ?></td>
+            </tr>
+        </table>
+
+        <a href="index.php" class="btn btn-cancel">Cancel</a>
+    </div>
 </body>
 </html>
 
-<?php $conn->close(); ?>
+<?php $conn -> close() ?>
