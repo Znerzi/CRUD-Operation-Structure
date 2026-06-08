@@ -10,4 +10,4 @@ CREATE TABLE applicants (
 );
 
 INSERT INTO applicants (name, location, position) VALUES
-("John Doe", "Tondo, Manila", "Back-End Developer");
+("John Doe", "Tondo, Manila", "Full-Stack Developer");

@@ -34,17 +34,16 @@ if (isset($_POST['submit'])) {
 
         <form method="POST" class="form">
             <label for="name">Name</label>
-            <input type="text" id="name" name="name" placeholder="Enter applicant name" required value="<?=isset($name) ? $name : '' ?>">
+            <input type="text" id="name" name="name" placeholder="Enter applicant name: " required value="<?=isset($name) ? $name : '' ?>">
             
             <label for="location">Location</label>
-            <input type="text" id="location" name="location" placeholder="Enter applicant location" required value="<?=isset($location) ? $location : '' ?>">
+            <input type="text" id="location" name="location" placeholder="Enter applicant location: " required value="<?=isset($location) ? $location : '' ?>">
             
             <label for="position">Position</label>
-            <input type="text" id="position" name="position" placeholder="Enter applicant position" required value="<?=isset($position) ? $position : '' ?>">
+            <input type="text" id="position" name="position" placeholder="Enter applicant position: " required value="<?=isset($position) ? $position : '' ?>">
 
             <button class="btn btn-submit" name="submit" type="submit">Add Applicant</button>
-            <a href="index.php" class="btn btn-cancel">Cancel</a>
-            
+            <a href="index.php" class="btn btn-cancel">Cancel</a>   
         </form>
     </div>
 </body>
