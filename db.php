@@ -1,4 +1,4 @@
-<?php
+<?php 
     $conn = new mysqli("localhost", "root", "", "applicants_db");
 
     if ($conn -> connect_error){
