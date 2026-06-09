@@ -17,7 +17,7 @@ $row = $conn -> query("SELECT * FROM applicants WHERE id = $id") -> fetch_assoc(
 <body>
     <div class="container">
         <h1>Applicant Details</h1>
-
+        
         <table class="table">
             <tr>
                 <th>ID</th>
@@ -37,9 +37,9 @@ $row = $conn -> query("SELECT * FROM applicants WHERE id = $id") -> fetch_assoc(
             <tr>
                 <th>Position</th>
                 <td><?= $row['position']?></td>
-            </tr>            
+            </tr>
         </table>
-            <a href="index.php" class="btn btn-cancel">Back</a>
+        <a href="index.php" class="btn btn-cancel">Back</a>
     </div>
 </body>
 </html>
