@@ -24,7 +24,7 @@ if (isset($_POST['submit'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Add Applicant</title>
+    <title>Create</title>
 </head>
 <body>
     <div class="container">
@@ -42,8 +42,8 @@ if (isset($_POST['submit'])) {
             <label for="position">Position</label>
             <input type="text" id="position" name="position" placeholder="Enter applicant position: " required value="<?=isset($position) ? $position : '' ?>">
 
-            <button class="btn btn-submit" name="submit" type="submit">Add Applicant</button>
-            <a href="index.php" class="btn btn-cancel">Cancel</a>   
+            <button class="btn btn-submit" name="submit">Add Applicant</button>
+            <a href="index.php" class="btn btn-cancel">Cancel</a>
         </form>
     </div>
 </body>
