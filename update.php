@@ -22,34 +22,32 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Edit Applicant</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <title>Update</title>
 </head>
 <body>
+    <div class="container">
+        <h1>Update Applicant</h1>
 
-<div class="container">
-    <h1>Edit Applicant</h1>
+        <?php echo $message; ?>
 
-    <?= $message ?>
+        <form action="POST" class="form">
+            <label for="name">Name</label>
+            <input type="text" name="name" value="<?= $row['name']?>" required>
+            
+            <label for="location">Location</label>
+            <input type="text" name="location" value="<?= $row['location']?>" required>
+            
+            <label for="name">Position</label>
+            <input type="text" name="position" value="<?= $row['position']?>" required>
+        </form>
 
-    <form method="POST" class="form">
-        <label>Name:</label>
-        <input type="text" name="name" value="<?= $row['name'] ?>" required>
-
-        <label>Location:</label>
-        <input type="text" name="location" value="<?= $row['location'] ?>" required>
-
-        <label>Position:</label>
-        <input type="text" name="position" value="<?= $row['position'] ?>" required>
-
-        <button type="submit" class="btn btn-submit">Update</button>
+        <button class="btn btn-submit" type="submit">Update Applicant</button>
         <a href="index.php" class="btn btn-cancel">Cancel</a>
-    </form>
-</div>
-
+    </div>
 </body>
 </html>
-
-<?php $conn->close(); ?>
