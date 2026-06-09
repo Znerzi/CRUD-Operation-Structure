@@ -4,16 +4,16 @@ include 'db.php';
 $message = "";
 
 $msgTypes = [
-    'success' => '✓ Added successfully!',
-    'updated' => '✓ Updated successfully!',
-    'deleted' => '✓ Deleted successfully!'
+    'success' => 'Added Successfully',
+    'updated' => 'Updated Successfully',
+    'deleted' => 'Deleted Successfully'
 ];
 
 if (isset($_GET['msg']) && isset($msgTypes[$_GET['msg']])) {
     $message = "<p class='success'>{$msgTypes[$_GET['msg']]}</p>";
 }
 
-$result = $conn->query("SELECT * FROM applicants");
+$result = $conn -> query("SELECT * FROM applicants");
 ?>
 
 <!DOCTYPE html>
@@ -61,7 +61,6 @@ $result = $conn->query("SELECT * FROM applicants");
         <?php endif; ?>
     </table>
 </div>
-
 </body>
 </html>
 
