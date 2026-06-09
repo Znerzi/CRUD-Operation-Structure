@@ -35,19 +35,21 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         <?php echo $message; ?>
 
-        <form action="POST" class="form">
+        <form method="POST" class="form">
             <label for="name">Name</label>
-            <input type="text" name="name" value="<?= $row['name']?>" required>
+            <input type="text" name="name" value="<?= $row['name'] ?>" required>
             
             <label for="location">Location</label>
-            <input type="text" name="location" value="<?= $row['location']?>" required>
+            <input type="text" name="location" value="<?= $row['location'] ?>" required>
             
-            <label for="name">Position</label>
-            <input type="text" name="position" value="<?= $row['position']?>" required>
-        </form>
+            <label for="position">Position</label>
+            <input type="text" name="position" value="<?= $row['position'] ?>" required>
 
-        <button class="btn btn-submit" type="submit">Update Applicant</button>
-        <a href="index.php" class="btn btn-cancel">Cancel</a>
+            <button class="btn btn-submit" type="submit">Update Applicant</button>
+            <a href="index.php" class="btn btn-cancel">Cancel</a>
+        </form>
     </div>
 </body>
 </html>
+
+<?php $conn -> close(); ?>
