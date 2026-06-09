@@ -4,24 +4,19 @@ include 'db.php';
 $message = "";
 $id = $_GET['id'];
 
-// Get applicant data
-$result = $conn->query("SELECT * FROM applicants WHERE id=$id");
-$row = $result->fetch_assoc();
+$result = $conn -> query("SELECT * FROM applicants WHERE id = $id");
+$row = $result -> fetch_assoc();
 
-// Update data
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $name = $_POST['name'];
     $location = $_POST['location'];
     $position = $_POST['position'];
 
-    if ($conn->query("UPDATE applicants 
-        SET name='$name', location='$location', position='$position' 
-        WHERE id=$id")) {
-
+    if ($conn -> query("UPDATE applicants SET name='$name', location='$location', position='$position' WHERE id = $id")) {
         header("Location: index.php?msg=updated");
         exit();
     } else {
-        $message = "<p class='error'>Error: {$conn->error}</p>";
+        $message = "<p class='error'>Error: $result -> error </p>";
     }
 }
 ?>
