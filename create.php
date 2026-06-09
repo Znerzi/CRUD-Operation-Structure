@@ -1,4 +1,4 @@
-<?php
+<?php 
 include 'db.php';
 
 $message = "";
@@ -12,11 +12,10 @@ if (isset($_POST['submit'])) {
         header("Location: index.php?msg=success");
         exit();
     } else {
-        $message = "<p class='error'> Error: " . $conn -> error . "</p>";
+        $message = "<p class='error'>Erro:" . $conn -> error . "</p>";
     }
 }
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -24,7 +23,7 @@ if (isset($_POST['submit'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Create</title>
+    <title>Create Applicants</title>
 </head>
 <body>
     <div class="container">
@@ -32,21 +31,19 @@ if (isset($_POST['submit'])) {
 
         <?php echo $message; ?>
 
-        <form method="POST" class="form">
+        <form class="form" method="POST">
             <label for="name">Name</label>
-            <input type="text" id="name" name="name" placeholder="Enter applicant name: " required value="<?=isset($name) ? $name : '' ?>">
+            <input type="text" id="name" name="name" placeholder="Enter applicant name..." required value="<?= isset($name) ? $name : '' ?>">
             
             <label for="location">Location</label>
-            <input type="text" id="location" name="location" placeholder="Enter applicant location: " required value="<?=isset($location) ? $location : '' ?>">
+            <input type="text" id="location" name="location" placeholder="Enter applicant location..." required value="<?= isset($location) ? $location : '' ?>">
             
             <label for="position">Position</label>
-            <input type="text" id="position" name="position" placeholder="Enter applicant position: " required value="<?=isset($position) ? $position : '' ?>">
-
+            <input type="text" id="position" position="position" placeholder="Enter applicant position..." required value="<?= isset($position) ? $position : '' ?>">
+            
             <button class="btn btn-submit" name="submit">Add Applicant</button>
             <a href="index.php" class="btn btn-cancel">Cancel</a>
         </form>
     </div>
 </body>
 </html>
-
-<?php $conn -> close(); ?>
