@@ -1,4 +1,4 @@
-<?php 
+<?php
 include 'db.php';
 
 $message = "";
@@ -6,7 +6,7 @@ $message = "";
 $msgTypes = [
     'success' => 'Added Successfully',
     'updated' => 'Updated Successfully',
-    'deleted' => 'Deleted Successfully',
+    'deleted' => 'Deleted Successfully'
 ];
 
 if (isset($_GET['msg']) && isset($msgTypes[$_GET['msg']])) {
@@ -39,24 +39,24 @@ $result = $conn -> query("SELECT * FROM applicants");
                 <th>Location</th>
                 <th>Position</th>
                 <th>Actions</th>
-
-                <?php if ($result -> num_rows > 0): ?>
-                    <?php while ($row = $result -> fetch_assoc()): ?>
-                        <tr>
-                            <td><?= $row['id']?></td>
-                            <td><?= $row['name']?></td>
-                            <td><?= $row['location']?></td>
-                            <td><?= $row['position']?></td>
-
-                            <td>
-                                <a href="read.php?id=<?= $row['id']?>" class="btn btn-add">View</a>
-                                <a href="update.php?id=<?= $row['id']?>" class="btn btn-edit">Update</a>
-                                <a href="delete.php?id=<?= $row['id']?>" class="btn btn-delete">Delete</a>
-                            </td>
-                        </tr>
-                    <?php endwhile; ?>
-                <?php endif; ?>
             </tr>
+
+            <?php if ($result -> num_rows > 0): ?>
+                <?php while ($row = $result -> fetch_assoc()): ?>
+                    <tr>
+                        <td><?= $row['id']?></td>
+                        <td><?= $row['name']?></td>
+                        <td><?= $row['location']?></td>
+                        <td><?= $row['position']?></td>
+
+                        <td>
+                            <a href="read.php?id=<?= $row['id']?>" class="btn btn-add">View</a>
+                            <a href="update.php?id=<?= $row['id']?>" class="btn btn-edit">Update</a>
+                            <a href="delete.php?id=<?= $row['id']?>" class="btn btn-delete">Delete</a>
+                        </td>
+                    </tr>
+                <?php endwhile; ?>
+            <?php endif; ?>
         </table>
     </div>
 </body>
