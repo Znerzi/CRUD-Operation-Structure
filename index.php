@@ -31,7 +31,7 @@ $result = $conn -> query("SELECT * FROM applicants");
         <?php echo $message; ?>
 
         <a href="create.php" class="btn btn-add">+ Add Applicant</a>
-        
+
         <table class="table">
             <tr>
                 <th>ID</th>
