@@ -49,7 +49,13 @@ $result = $conn->query($sql);
         </form>
 
 
-        <a href="create.php" class="btn btn-
+        <a href="create.php" class="btn btn-add">Add Applicant</a>
+
+        <?php echo $message; ?>
+
+        <table class="table">
+            <tr>
+                <th>ID</th>
                 <th>Name</th>
                 <th>Location</th>
                 <th>Position</th>
