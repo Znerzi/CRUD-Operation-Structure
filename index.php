@@ -47,7 +47,6 @@ $result = $conn->query($sql);
             <button type="submit" class="btn btn-add">Search</button>
         </form>
 
-
         <a href="create.php" class="btn btn-add">Add Applicant</a>
 
         <?php echo $message; ?>
