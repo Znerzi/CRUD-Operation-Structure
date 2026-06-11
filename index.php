@@ -40,7 +40,6 @@ $result = $conn->query($sql);
 <body>
     <div class="container">
         <h1>Applicant Management</h1>
-
         
         <form method="GET" action="">
             <input type="text" name="search" placeholder="Search by name, location, or position"
