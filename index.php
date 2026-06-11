@@ -32,6 +32,14 @@ $result = $conn->query($sql);
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Applicant Management</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Applicant Management</h1>
                 <th>Name</th>
                 <th>Location</th>
                 <th>Position</th>
