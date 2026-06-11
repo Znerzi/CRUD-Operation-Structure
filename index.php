@@ -40,6 +40,12 @@ $result = $conn->query($sql);
 <body>
     <div class="container">
         <h1>Applicant Management</h1>
+
+        
+        <form method="GET" action="">
+            <input type="text" name="search" placeholder="Search by name, location, or position"
+                value="<?= isset($_GET['search']) ? htmlspecialchars($_GET['search']) : '' ?>">
+            <button type="submit" class="btn btn-
                 <th>Name</th>
                 <th>Location</th>
                 <th>Position</th>
